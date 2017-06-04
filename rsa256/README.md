@@ -20,7 +20,7 @@ MDwwDQYJKoZIhvcNAQEBBQADKwAwKAIhAIl47p5SrV3uMTsUAbwE0E+j+QynAY/CVq/Gf8IAOQy7AgMB
 -----END PUBLIC KEY-----
 
 Save this to a file called, for example, rsa256.pub.  
-[public.key](rsa256.pub)
+[rsa256.pub](rsa256.pub)
 
 3. Import this key into Python and extract the values of n and e:  
 
@@ -30,21 +30,21 @@ print key.n, key.e
 
 [cry.py](cry.py)
 
-4. Now factorize n:
-mkdir yafu
-mkdir bin
-cd yafu
-wget "https://downloads.sourceforge.net/project/yafu/1.34/yafu-1.34.zip" -O yafu.zip
-unzip yafu.zip
-chmod 755 yafu
-mv yafu ../bin
-run yafu
+4. Now factorize n:  
+mkdir yafu  
+mkdir bin  
+cd yafu  
+wget "https://downloads.sourceforge.net/project/yafu/1.34/yafu-1.34.zip" -O yafu.zip  
+unzip yafu.zip  
+chmod 755 yafu  
+mv yafu ../bin  
+run yafu  
 
 factor(n)
 
 Call the larger one p and the smaller one q.
 
-5. generate a private key:
+5. generate a private key:  
 Call pqe2rsa() with the values of p and q from step 4 and the value of e from step 3, and you should get a private key.
 
 [solve.py](solve.py)
