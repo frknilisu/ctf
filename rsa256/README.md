@@ -14,20 +14,19 @@
 PyCrypto to the rescue!
 
 1. Start by installing PyCrypto. This includes a lot of useful tools.
-2. You need to convert the raw base64 string into a readable RSA key file. This is easily done:
------BEGIN PUBLIC KEY-----
-MDwwDQYJKoZIhvcNAQEBBQADKwAwKAIhAIl47p5SrV3uMTsUAbwE0E+j+QynAY/C
-Vq/Gf8IAOQy7AgMBAAE=
+2. You need to convert the raw base64 string into a readable RSA key file. This is easily done:  
+-----BEGIN PUBLIC KEY-----  
+MDwwDQYJKoZIhvcNAQEBBQADKwAwKAIhAIl47p5SrV3uMTsUAbwE0E+j+QynAY/CVq/Gf8IAOQy7AgMBAAE=  
 -----END PUBLIC KEY-----
 
-Save this to a file called, for example, rsa256.pub.
+Save this to a file called, for example, rsa256.pub.  
 [public.key](rsa256.pub)
 
-3. Import this key into Python and extract the values of n and e:
+3. Import this key into Python and extract the values of n and e:  
 
-from Crypto.PublicKey import RSA
-key = RSA.importKey(open('rsa256.pub').read())
-print key.n, key.e
+from Crypto.PublicKey import RSA  
+key = RSA.importKey(open('rsa256.pub').read())  
+print key.n, key.e  
 
 [cry.py](cry.py)
 
